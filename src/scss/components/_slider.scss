@@ -1,0 +1,92 @@
+.slider {
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 124px;
+    height: 129px;
+    border: none;
+    background-color: transparent;
+    background-image: url('/src/img/icons/play.png');
+    transform: translate3d(-50%, -50%, 0);
+
+    @include bg;
+  }
+
+  &__img-box {
+    display: flex;
+    justify-content: space-between;
+    touch-action: pan-y;
+    transform: translate3d(-100%, 0, 0);
+    user-select: none;
+
+    @media (max-width: 991px) {
+      transform: translate3d(-200%, 0, 0);
+    }
+
+    @media (max-width: 575px) {
+      transform: translate3d(-400%, 0, 0);
+    }
+  }
+
+  &__img-item {
+    display: flex;
+    width: 33%;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: space-between;
+    margin: 0% calc(1% / 6);
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      margin: 0 auto;
+      pointer-events: none;
+    }
+
+    @media (max-width: 991px) {
+      width: 49%;
+      flex-shrink: 0;
+      margin: 0% calc(2% / 4);
+    }
+
+    @media (max-width: 575px) {
+      width: 98%;
+      flex-shrink: 0;
+      margin: 0% 1%;
+    }
+  }
+
+  &__nav-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+    @media (max-width: 575px) {
+      margin-top: 20px;
+    }
+  }
+
+  &__nav-item {
+    width: 13px;
+    height: 14px;
+    border: solid 1px #adb2b9;
+    margin-right: 8px;
+    background-color: transparent;
+    border-radius: 50%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_active {
+      border: solid 1px #cc3a3c;
+    }
+  }
+}
