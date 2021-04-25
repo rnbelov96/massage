@@ -1,0 +1,141 @@
+.money {
+  min-height: 1100px;
+  padding-top: 52px;
+  overflow: hidden;
+
+  @media (max-width: 1200px) {
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 30px;
+  }
+}
+
+.money__title {
+  font-family: Avanti;
+  font-size: 55px;
+  font-weight: bold;
+  margin-bottom: 55px;
+  text-align: center;
+
+  span {
+    color: $red;
+  }
+
+  @media (max-width: 1200px) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 575px) {
+    font-size: 24px;
+  }
+}
+
+.money__tablet {
+  margin-bottom: 15px;
+
+  @media (max-width: 575px) {
+    width: 100%;
+    max-width: 384px;
+  }
+}
+
+.money__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.money__stand {
+  position: relative;
+  width: 744px;
+  padding-left: 105px;
+  padding-right: 105px;
+  padding-top: 70px;
+
+  &::before {
+    position: absolute;
+    bottom: -292px;
+    left: -648px;
+    content: url('/src/img/bed.png');
+    @media (max-width: 1200px) {
+      content: none;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    left: 0;
+    top: -267px;
+    z-index: -1;
+    content: url('/src/img/stand.png');
+
+    @media (max-width: 575px) {
+      content: none;
+    }
+  }
+
+  @media (max-width: 575px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    width: 100%;
+    @include bg;
+    background-image: url('/src/img/stand-bg.jpg');
+  }
+}
+
+.money__text-wrapper {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0 27.2px 4.8px rgba(31, 32, 34, 0.07);
+  padding: 9px;
+  margin-bottom: 52px;
+
+  &:last-child {
+    margin-bottom: 34px;
+  }
+}
+
+.money__text-box {
+  border-radius: 4px;
+  box-shadow: 0 0 27.8px 4.2px rgba(31, 32, 34, 0.1);
+  border: solid 1px #bfbfbf;
+  padding-top: 20px;
+  padding-bottom: 12px;
+  padding-left: 70px;
+  padding-right: 70px;
+
+  @media (max-width: 575px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+}
+
+.money__text-title {
+  font-family: Avanti;
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 1.05;
+  color: #e41f25;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.money__text {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 0;
+}
+

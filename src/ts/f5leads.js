@@ -4,11 +4,24 @@ const validateForm = form => {
   const nameInputEl = form.querySelector('[data-type="name"]');
   const phoneInputEl = form.querySelector('[data-type="phone"]');
   const emailInputEl = form.querySelector('[data-type="email"]');
+  const cityInputEl = form.querySelector('[data-type="city"]');
 
   let isOk = true;
 
+  if (nameInputEl && nameInputEl.value === '') {
+    nameInputEl.classList.add('input-error');
+    isOk = false;
+  }
   if (phoneInputEl.value === '') {
     phoneInputEl.classList.add('input-error');
+    isOk = false;
+  }
+  if (emailInputEl.value === '') {
+    emailInputEl.classList.add('input-error');
+    isOk = false;
+  }
+  if (cityInputEl && cityInputEl.value === '') {
+    cityInputEl.classList.add('input-error');
     isOk = false;
   }
 

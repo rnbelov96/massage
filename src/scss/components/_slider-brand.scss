@@ -1,0 +1,119 @@
+.slider-brand {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &::before {
+    content:url('/src/img/flag.png');
+    position: absolute;
+    bottom: -41px;
+    right: -573px;
+
+    @media (max-width: 1200px) {
+      content: none;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__img-box {
+    display: flex;
+    justify-content: space-between;
+    touch-action: pan-y;
+    transform: translate3d(-400%, 0, 0);
+    user-select: none;
+  }
+
+  &__img-item {
+    display: flex;
+    width: 98%;
+    flex-shrink: 0;
+    margin: 0% 1%;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: space-between;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      pointer-events: none;
+    }
+  }
+
+  &__nav-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  &__nav-item {
+    width: 12px;
+    height: 12px;
+    margin-right: 7px;
+    background-color: #c4c4c4;
+    border-radius: 50%;
+    border: 0px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_active {
+      background-color: #dc433d;
+    }
+  }
+
+  &__btn-prev,
+  &__btn-next {
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    background-color: transparent;
+    border: 0px;
+    padding: 0;
+  }
+
+  &__btn-prev {
+    left: -57px - 42px;
+    @include bg;
+    background-image: url('/src/img/left-arrow.png');
+
+    @media (max-width: 991px) {
+      left: -36px;
+    }
+
+    @media (max-width: 767px) {
+      left: -13px;
+    }
+
+    @media (max-width: 575px) {
+      left: 0px;
+    }
+  }
+
+  &__btn-next {
+    right: -57px - 42px;
+    @include bg;
+    background-image: url('/src/img/right-arrow.png');
+
+    @media (max-width: 991px) {
+      right: -36px;
+    }
+
+    @media (max-width: 767px) {
+      right: -13px;
+    }
+
+    @media (max-width: 575px) {
+      right: 0px;
+    }
+  }
+}

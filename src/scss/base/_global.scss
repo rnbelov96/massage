@@ -18,6 +18,16 @@ body {
   @media (max-width: 575px) {
     padding: 0 15px;
   }
+
+  &_nav {
+    @media (max-width: 1200px) {
+      padding: 0;
+    }
+  
+    @media (max-width: 575px) {
+      padding: 0;
+    }
+  }
 }
 
 .visually-hidden {
@@ -29,4 +39,9 @@ body {
   border: 0;
   margin: -1px;
   clip: rect(0 0 0 0);
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }

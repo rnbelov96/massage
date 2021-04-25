@@ -1,19 +1,8 @@
 export {};
 
-const changeMode = (pageWidth: number) => {
-  if (pageWidth <= 575) {
-    return 1;
-  }
-  if (pageWidth > 575 && pageWidth <= 991) {
-    return 2;
-  }
-  return 3;
-};
-
-const imagesLength = 3;
+const imagesLength = 5;
 let currentImage = 1;
-let pageWidth = document.documentElement.scrollWidth;
-let mode = changeMode(pageWidth);
+const mode = 1;
 
 const translateXPosList = [
   {
@@ -29,28 +18,33 @@ const translateXPosList = [
     pos: -400,
   },
 ];
-let initTranslateXPos = translateXPosList.find(el => el.mode === mode)
+const initTranslateXPos = translateXPosList.find(el => el.mode === mode)
   ?.pos as number;
 let translateXPos = initTranslateXPos;
-let translateStep = 100 / mode;
+const translateStep = 100 / mode;
 let offset: number;
 let posInit: number;
 let isDragging = false;
 
 const imagesBoxEl = document.querySelector(
-  '.slider__img-box',
+  '.slider-brand__img-box',
 ) as HTMLDivElement;
-const wrapperEl = document.querySelector('.slider__wrapper') as HTMLDivElement;
+const wrapperEl = document.querySelector('.slider-brand__wrapper') as HTMLDivElement;
 
 let wrapperCoords = wrapperEl.getBoundingClientRect();
 let wrapperLeftCoords = wrapperCoords.left;
 let wrapperWidth = wrapperCoords.width;
 
-const navBoxEl = document.querySelector('.slider__nav-box') as HTMLDivElement;
+const navBoxEl = document.querySelector('.slider-brand__nav-box') as HTMLDivElement;
+
+const prevBtnEl = document.querySelector('.slider-brand__btn-prev') as HTMLButtonElement;
+const nextBtnEl = document.querySelector('.slider-brand__btn-next') as HTMLButtonElement;
 
 let navItemList: HTMLButtonElement[];
 
 const blockBtns = () => {
+  nextBtnEl.disabled = true;
+  prevBtnEl.disabled = true;
   navItemList.forEach(el => {
     // eslint-disable-next-line no-param-reassign
     el.disabled = true;
@@ -58,6 +52,8 @@ const blockBtns = () => {
 };
 
 const activateBtns = () => {
+  nextBtnEl.disabled = false;
+  prevBtnEl.disabled = false;
   navItemList.forEach(el => {
     // eslint-disable-next-line no-param-reassign
     el.disabled = false;
@@ -68,9 +64,9 @@ navItemList = Array(imagesLength)
   .fill({}, 0, imagesLength)
   .map((_el, index) => {
     const navItemEl = document.createElement('button');
-    navItemEl.classList.add('slider__nav-item');
+    navItemEl.classList.add('slider-brand__nav-item');
     if (index === 0) {
-      navItemEl.classList.add('slider__nav-item_active');
+      navItemEl.classList.add('slider-brand__nav-item_active');
     }
     navItemEl.dataset.image = String(index + 1);
     navItemEl.addEventListener('click', e => {
@@ -82,9 +78,9 @@ navItemList = Array(imagesLength)
       const newTranslateXPos = initTranslateXPos - translateStep * (currentImage - 1);
       translateXPos = newTranslateXPos;
       imagesBoxEl.style.transform = `translate3d(${translateXPos}%, 0px, 0px)`;
-      navItemList[currentImage - 1].classList.add('slider__nav-item_active');
+      navItemList[currentImage - 1].classList.add('slider-brand__nav-item_active');
       navItemList[prevCurrentImage - 1].classList.remove(
-        'slider__nav-item_active',
+        'slider-brand__nav-item_active',
       );
       setTimeout(() => {
         imagesBoxEl.style.transition = '';
@@ -100,19 +96,6 @@ window.addEventListener('resize', () => {
   wrapperCoords = wrapperEl.getBoundingClientRect();
   wrapperLeftCoords = wrapperCoords.left;
   wrapperWidth = wrapperCoords.width;
-
-  pageWidth = document.documentElement.scrollWidth;
-  const newMode = changeMode(pageWidth);
-  if (mode === newMode) {
-    return;
-  }
-  mode = newMode;
-  translateStep = 100 / mode;
-  initTranslateXPos = translateXPosList.find(el => el.mode === mode)
-    ?.pos as number;
-  const newTranslateXPos = initTranslateXPos - translateStep * (currentImage - 1);
-  translateXPos = newTranslateXPos;
-  imagesBoxEl.style.transform = `translate3d(${translateXPos}%, 0px, 0px)`;
 });
 
 const dragAction = (e: MouseEvent) => {
@@ -157,9 +140,9 @@ const swipeEnd = () => {
     if (currentImage === 0) {
       currentImage = imagesLength;
     }
-    navItemList[currentImage - 1].classList.add('slider__nav-item_active');
+    navItemList[currentImage - 1].classList.add('slider-brand__nav-item_active');
     navItemList[prevCurrentImage - 1].classList.remove(
-      'slider__nav-item_active',
+      'slider-brand__nav-item_active',
     );
   }
 
@@ -169,9 +152,9 @@ const swipeEnd = () => {
     if (currentImage === imagesLength + 1) {
       currentImage = 1;
     }
-    navItemList[currentImage - 1].classList.add('slider__nav-item_active');
+    navItemList[currentImage - 1].classList.add('slider-brand__nav-item_active');
     navItemList[prevCurrentImage - 1].classList.remove(
-      'slider__nav-item_active',
+      'slider-brand__nav-item_active',
     );
   }
 
@@ -207,3 +190,53 @@ wrapperEl.addEventListener('mouseup', swipeEnd);
 wrapperEl.addEventListener('touchend', swipeEnd);
 
 wrapperEl.addEventListener('mouseleave', swipeLeave);
+
+prevBtnEl.addEventListener('click', () => {
+  blockBtns();
+  const prevCurrentImage = currentImage;
+  imagesBoxEl.style.transition = 'transform .5s';
+  translateXPos += translateStep;
+  currentImage -= 1;
+  if (currentImage === 0) {
+    currentImage = imagesLength;
+  }
+
+  navItemList[currentImage - 1].classList.add('slider-brand__nav-item_active');
+  navItemList[prevCurrentImage - 1].classList.remove('slider-brand__nav-item_active');
+
+  imagesBoxEl.style.transform = `translate3d(${translateXPos}%, 0px, 0px)`;
+
+  setTimeout(() => {
+    imagesBoxEl.style.transition = '';
+    if (currentImage === imagesLength && prevCurrentImage === 1) {
+      translateXPos = initTranslateXPos - translateStep * (imagesLength - 1);
+      imagesBoxEl.style.transform = `translate3d(${translateXPos}%, 0px, 0px)`;
+    }
+    activateBtns();
+  }, 500);
+});
+
+nextBtnEl.addEventListener('click', () => {
+  blockBtns();
+  const prevCurrentImage = currentImage;
+  imagesBoxEl.style.transition = 'transform .5s';
+  translateXPos -= translateStep;
+  currentImage += 1;
+  if (currentImage === imagesLength + 1) {
+    currentImage = 1;
+  }
+
+  navItemList[currentImage - 1].classList.add('slider-brand__nav-item_active');
+  navItemList[prevCurrentImage - 1].classList.remove('slider-brand__nav-item_active');
+
+  imagesBoxEl.style.transform = `translate3d(${translateXPos}%, 0px, 0px)`;
+
+  setTimeout(() => {
+    imagesBoxEl.style.transition = '';
+    if (currentImage === 1 && prevCurrentImage === imagesLength) {
+      translateXPos = initTranslateXPos;
+      imagesBoxEl.style.transform = `translate3d(${translateXPos}%, 0px, 0px)`;
+    }
+    activateBtns();
+  }, 500);
+});

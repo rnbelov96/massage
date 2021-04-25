@@ -1,0 +1,145 @@
+.steps {
+  background-color: #f4f4f4;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  overflow: hidden;
+
+  @media (max-width: 767px) {
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+}
+
+.steps__title {
+  font-family: Avanti;
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 70px;
+  margin-bottom: 45px;
+  text-align: center;
+
+  span {
+    color: $red;
+  }
+
+  @media (max-width: 575px) {
+    font-size: 32px;
+    line-height: 46px;
+    margin-bottom: 25px;
+  }
+}
+
+.steps__list {
+  position: relative;
+  padding: 0;
+  margin-bottom: 40px;
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &::before {
+    position: absolute;
+
+    content: url('/src/img/steps/candle.png');
+    bottom: -105px;
+    right: -320px;
+
+    @media (max-width: 1200px) {
+      content: none;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    justify-content: space-around;
+    margin-bottom: 0;
+  }
+}
+
+.steps__item {
+  padding-top: 18px;
+  margin-right: 45px;
+  padding-left: 20px;
+  padding-right: 28px;
+  padding-bottom: 13px;
+  border-radius: 4px;
+  box-shadow: 0 0 6.4px 0.6px rgba(31, 32, 34, 0.08);
+  background-color: white;
+  width: 347px;
+  min-height: 248px;
+  margin-bottom: 40px;
+
+  @media (max-width: 1200px) {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  &:nth-child(3n) {
+    margin-right: 0;
+
+    @media (max-width: 1200px) {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+  }
+  &:nth-child(1) {
+    background-image: url('/src/img/steps/1.png');
+    background-repeat: no-repeat;
+    background-position: 256px 33px;
+  }
+  &:nth-child(1) {
+    background-image: url('/src/img/steps/1.png');
+    background-repeat: no-repeat;
+    background-position: 272px 33px;
+  }
+  &:nth-child(2) {
+    background-image: url('/src/img/steps/2.png');
+    background-repeat: no-repeat;
+    background-position: 256px 33px;
+  }
+  &:nth-child(3) {
+    background-image: url('/src/img/steps/3.png');
+    background-repeat: no-repeat;
+    background-position: 256px 33px;
+  }
+  &:nth-child(4) {
+    background-image: url('/src/img/steps/4.png');
+    background-repeat: no-repeat;
+    background-position: 256px 33px;
+  }
+  &:nth-child(5) {
+    background-image: url('/src/img/steps/5.png');
+    background-repeat: no-repeat;
+    background-position: 266px 33px;
+  }
+  &:nth-child(6) {
+    background-image: url('/src/img/steps/6.png');
+    background-repeat: no-repeat;
+    background-position: 272px 33px;
+  }
+  &:nth-child(7) {
+    background-image: url('/src/img/steps/7.png');
+    background-repeat: no-repeat;
+    background-position: 256px 33px;
+  }
+  &:nth-child(8) {
+    background-image: url('/src/img/steps/8.png');
+    background-repeat: no-repeat;
+    background-position: 270px 33px;
+  }
+}
+
+.steps__item-title {
+  font-family: Avanti;
+  font-size: 20px;
+  font-weight: bold;
+  color: #e74549;
+  margin-bottom: 30px;
+  line-height: 1.67;
+}
+
+.steps__text {
+  font-size: 18px;
+  line-height: 1.67;
+  margin-bottom: 0;
+}

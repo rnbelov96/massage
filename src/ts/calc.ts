@@ -3,22 +3,20 @@ export {};
 
 const rangeElList = document.querySelectorAll('.js-range');
 
-const classesRange = document.querySelector('.js-classes-range') as HTMLInputElement;
-const merchRange = document.querySelector('.js-merch-range') as HTMLInputElement;
+const studentRange = document.querySelector('.js-student-range') as HTMLInputElement;
+const sessionRange = document.querySelector('.js-session-range') as HTMLInputElement;
+const sellRange = document.querySelector('.js-sell-range') as HTMLInputElement;
 
-const incomeLabelEl = document.querySelector('.js-income') as HTMLSpanElement;
-const profitLabelEl = document.querySelector('.js-profit') as HTMLSpanElement;
+const profitLabelEl = document.querySelector('.js-calc-result') as HTMLSpanElement;
 
-let income: number;
 let profit: number;
 
-let classesCurrentStep = 4;
-let merchCurrentStep = 4;
+let studentCurrentStep = 3;
+let sessionCurrentStep = 2;
+let sellCurrentStep = 2;
 
 const calcResult = () => {
-  income = Number(classesRange.value) * 2500 + Number(merchRange.value) * 3000;
-  profit = income * 0.4;
-  incomeLabelEl.textContent = income.toLocaleString();
+  profit = (Number(studentRange.value) * 2500 + Number(sessionRange.value) * 3000 + Number(sellRange.value) * 3000) * 0.4;
   profitLabelEl.textContent = (profit).toLocaleString();
 };
 
@@ -31,35 +29,49 @@ rangeElList.forEach(el => {
 
   const currentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
 
-  rangeEl.style.background = `linear-gradient(to right, #f3a925 0%, #f3a925 ${String(
+  rangeEl.style.background = `linear-gradient(to right, #dc3f54 0%, #dc3f54 ${String(
     (currentStep / steps) * 100,
-  )}%, #d3d3d3 ${String((currentStep / steps) * 100)}%, #d3d3d3 100%)`;
+  )}%, #ffd78e ${String((currentStep / steps) * 100)}%, #ffd78e 100%)`;
 });
 
-classesRange.addEventListener('input', e => {
+studentRange.addEventListener('input', e => {
   const rangeEl = e.currentTarget as HTMLInputElement;
 
   const steps = (Number(rangeEl.max) - Number(rangeEl.min)) / Number(rangeEl.step);
 
-  classesCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
+  studentCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
 
-  rangeEl.style.background = `linear-gradient(to right, #f3a925 0%, #f3a925 ${String(
-    (classesCurrentStep / steps) * 100,
-  )}%, #d3d3d3 ${String((classesCurrentStep / steps) * 100)}%, #d3d3d3 100%)`;
+  rangeEl.style.background = `linear-gradient(to right, #dc3f54 0%, #dc3f54 ${String(
+    (studentCurrentStep / steps) * 100,
+  )}%, #ffd78e ${String((studentCurrentStep / steps) * 100)}%, #ffd78e 100%)`;
 
   calcResult();
 });
 
-merchRange.addEventListener('input', e => {
+sessionRange.addEventListener('input', e => {
   const rangeEl = e.currentTarget as HTMLInputElement;
 
   const steps = (Number(rangeEl.max) - Number(rangeEl.min)) / Number(rangeEl.step);
 
-  merchCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
+  sessionCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
 
-  rangeEl.style.background = `linear-gradient(to right, #f3a925 0%, #f3a925 ${String(
-    (merchCurrentStep / steps) * 100,
-  )}%, #d3d3d3 ${String((merchCurrentStep / steps) * 100)}%, #d3d3d3 100%)`;
+  rangeEl.style.background = `linear-gradient(to right, #dc3f54 0%, #dc3f54 ${String(
+    (sessionCurrentStep / steps) * 100,
+  )}%, #ffd78e ${String((sessionCurrentStep / steps) * 100)}%, #ffd78e 100%)`;
+
+  calcResult();
+});
+
+sellRange.addEventListener('input', e => {
+  const rangeEl = e.currentTarget as HTMLInputElement;
+
+  const steps = (Number(rangeEl.max) - Number(rangeEl.min)) / Number(rangeEl.step);
+
+  sellCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
+
+  rangeEl.style.background = `linear-gradient(to right, #dc3f54 0%, #dc3f54 ${String(
+    (sellCurrentStep / steps) * 100,
+  )}%, #ffd78e ${String((sellCurrentStep / steps) * 100)}%, #ffd78e 100%)`;
 
   calcResult();
 });
