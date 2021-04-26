@@ -54,7 +54,13 @@
 }
 
 .cowork__text-box {
+  position: relative;
   width: 370px;
+  left: 52px;
+
+  @media (max-width: 1200px) {
+    left: 0;
+  }
 
   @media (max-width: 991px) {
     width: 100%;

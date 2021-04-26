@@ -3,21 +3,29 @@ export {};
 
 const rangeElList = document.querySelectorAll('.js-range');
 
-const studentRange = document.querySelector('.js-student-range') as HTMLInputElement;
-const sessionRange = document.querySelector('.js-session-range') as HTMLInputElement;
+const studentRange = document.querySelector(
+  '.js-student-range',
+) as HTMLInputElement;
+const sessionRange = document.querySelector(
+  '.js-session-range',
+) as HTMLInputElement;
 const sellRange = document.querySelector('.js-sell-range') as HTMLInputElement;
 
-const profitLabelEl = document.querySelector('.js-calc-result') as HTMLSpanElement;
+const profitLabelEl = document.querySelector(
+  '.js-calc-result',
+) as HTMLSpanElement;
 
 let profit: number;
 
-let studentCurrentStep = 3;
-let sessionCurrentStep = 2;
-let sellCurrentStep = 2;
+let studentCurrentStep = 10;
+let sessionCurrentStep = 5;
+let sellCurrentStep = 8;
 
 const calcResult = () => {
-  profit = (Number(studentRange.value) * 2500 + Number(sessionRange.value) * 3000 + Number(sellRange.value) * 3000) * 0.4;
-  profitLabelEl.textContent = (profit).toLocaleString();
+  profit = Number(studentRange.value) * 24000
+    + Number(sessionRange.value) * 2000
+    + Number(sellRange.value) * 200;
+  profitLabelEl.textContent = profit.toLocaleString();
 };
 
 calcResult();

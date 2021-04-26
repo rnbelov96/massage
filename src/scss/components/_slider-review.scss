@@ -2,6 +2,17 @@
   position: relative;
   width: 500px;
 
+  &::before {
+    content: url('/src/img/class.png');
+    position: absolute;
+    left: -300px;
+    bottom: -60px;
+
+    @media (max-width: 991px) {
+      content: none;
+    }
+  }
+
   @media (max-width: 991px) {
     margin-bottom: 30px;
   }

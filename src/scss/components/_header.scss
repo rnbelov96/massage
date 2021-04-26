@@ -19,6 +19,7 @@
   border: 0px;
   background-color: transparent;
   padding: 0;
+  order: 2;
 
   &::before {
     position: absolute;
@@ -40,6 +41,7 @@
   font-size: 20px;
   color: $red;
   margin-bottom: 0;
+  order: 1;
 
   @media (max-width: 767px) {
     font-size: 17px;
@@ -61,6 +63,7 @@
   border-radius: 10px;
   color: white;
   text-align: center;
+  order: 3;
 
   &:hover, &:focus {
     color: white;

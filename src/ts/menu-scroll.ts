@@ -36,9 +36,9 @@ anchorHamEl.addEventListener('click', () => {
 });
 
 const gainsEl = document.querySelector('.money') as HTMLDivElement;
-const ownerEl = document.querySelector('.owner') as HTMLDivElement;
+const ownerEl = document.querySelector('.owner__title') as HTMLDivElement;
 const calcEl = document.querySelector('.calc') as HTMLDivElement;
-const bussinessEl = document.querySelector('.math') as HTMLDivElement;
+const bussinessEl = document.querySelector('.steps') as HTMLDivElement;
 const blockList = [gainsEl, ownerEl, calcEl, bussinessEl];
 
 const blockScroll = (e: Event) => {

@@ -1,6 +1,6 @@
 export {};
 
-const imagesLength = 5;
+const imagesLength = 6;
 let currentImage = 1;
 const mode = 1;
 
