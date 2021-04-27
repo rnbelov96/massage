@@ -2,15 +2,15 @@
   position: relative;
   display: flex;
   align-items: center;
+  border: 0;
+  background-color: #ffd200;
   border-radius: 10px;
   box-shadow: 0 0 7.5px 0.5px rgba(31, 32, 34, 0.17);
-  background-color: #ffd200;
-  text-transform: uppercase;
+  box-shadow: 0 0 7.5px 0.5px rgba(31, 32, 34, 0.17), 0 4px 0 #b28a01;
   font-family: Avanti;
   font-size: 18px;
   font-weight: bold;
-  box-shadow: 0 0 7.5px 0.5px rgba(31, 32, 34, 0.17), 0px 4px 0px #b28a01;
-  border: 0px;
+  text-transform: uppercase;
 
   &:hover,
   &:focus {
@@ -24,26 +24,27 @@
 
   &_line-form {
     position: relative;
+    width: 100%;
+    max-width: 293px;
     min-height: 89px;
     padding-top: 18px;
     padding-bottom: 18px;
     padding-left: 40px;
-    width: 100%;
-    max-width: 293px;
 
     &::before {
       position: absolute;
-      content: '';
+      top: -17px;
+      right: 0;
       width: 114px;
       height: 105px;
-      @include bg;
       background-image: url('/src/img/present-book.png');
-      right: 0;
-      top: -17px;
+      content: '';
+
+      @include bg;
 
       @media (max-width: 575px) {
-        transform: scale(0.85);
         right: -17px;
+        transform: scale(0.85);
       }
     }
   }
@@ -51,10 +52,10 @@
   &_line-form-center {
     width: 100%;
     max-width: 293px;
-    justify-content: center;
-    align-items: center;
     min-height: 89px;
-    box-shadow: 0 0 7.5px 0.5px rgba(31, 32, 34, 0.17), 0px 6px 0px #b28a01;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 7.5px 0.5px rgba(31, 32, 34, 0.17), 0 6px 0 #b28a01;
   }
 
   &_thanks {
@@ -62,14 +63,14 @@
   }
 
   &_modal-form {
+    width: 100%;
     min-height: 111px;
     justify-content: center;
-    font-size: 24px;
-    padding-left: 10px;
     padding-right: 10px;
-    width: 100%;
-    box-shadow: 0 0 7.5px 0.5px rgba(31, 32, 34, 0.17), 0px 6px 0px #b28a01;
+    padding-left: 10px;
     margin-bottom: 22px;
+    box-shadow: 0 0 7.5px 0.5px rgba(31, 32, 34, 0.17), 0 6px 0 #b28a01;
+    font-size: 24px;
   }
 }
 

@@ -1,9 +1,9 @@
 .target {
+  overflow: hidden;
   min-height: 886px;
-  background-color: #f1ede9;
   padding-top: 65px;
   padding-bottom: 30px;
-  overflow: hidden;
+  background-color: #f1ede9;
 
   @media (max-width: 991px) {
     padding-top: 30px;
@@ -11,11 +11,11 @@
 }
 
 .target__title {
+  margin-bottom: 35px;
   font-family: Avanti;
   font-size: 60px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 35px;
 
   span {
     color: $red;
@@ -32,8 +32,8 @@
 
 .target__content {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
+  justify-content: space-between;
 
   @media (max-width: 991px) {
     flex-direction: column;
@@ -58,9 +58,9 @@
 }
 
 .target__text {
+  margin-bottom: 35px;
   line-height: 1.4;
   text-align: justify;
-  margin-bottom: 35px;
 
   &:first-child {
     margin-bottom: 48px;
@@ -69,34 +69,36 @@
 
 .target__note {
   position: relative;
-  border-radius: 4px;
-  background-color: white;
-  min-height: 131px;
   display: flex;
+  min-height: 131px;
   align-items: center;
   padding-left: 243px;
+  margin-bottom: 40px;
+  background-color: white;
+  border-radius: 4px;
+  color: $red;
   font-size: 22px;
   line-height: 1.27;
-  color: $red;
-  margin-bottom: 40px;
 
   &::before {
     position: absolute;
-    content: '';
-    width: 210px;
-    height: 137px;
-    @include bg;
-    background-image: url('/src/img/money.png');
     top: -10px;
     left: 14px;
+    width: 210px;
+    height: 137px;
+    background-image: url('/src/img/money.png');
+    content: '';
+
+    @include bg;
+
     @media (max-width: 575px) {
       content: none;
     }
   }
 
   @media (max-width: 575px) {
-    text-align: center;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
   }
 }

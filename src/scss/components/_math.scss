@@ -1,8 +1,8 @@
 .math {
+  overflow: hidden;
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: #f1ede9;
-  overflow: hidden;
 
   @media (max-width: 991px) {
     padding-top: 30px;
@@ -11,13 +11,12 @@
 }
 
 .math__title {
+  margin-bottom: 20px;
   font-family: Avanti;
-
-  text-align: center;
   font-size: 58px;
   font-weight: bold;
   line-height: 70px;
-  margin-bottom: 20px;
+  text-align: center;
 
   span {
     color: $red;
@@ -32,13 +31,11 @@
     font-size: 28px;
     line-height: 40px;
   }
-
-  
 }
 
 .math__text {
-  line-height: 1.5;
   margin-bottom: 30px;
+  line-height: 1.5;
   text-align: center;
 
   @media (max-width: 767px) {
@@ -49,29 +46,29 @@
 .math__content {
   width: 100%;
   max-width: 778px;
-  margin-left: auto;
-  margin-right: auto;
   min-height: 489px;
+  padding-top: 55px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-left: 144px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
   border-radius: 4px;
   box-shadow: 0 0 6.4px 0.6px rgba(31, 32, 34, 0.08);
-  background-color: white;
-  padding-top: 55px;
-  padding-left: 144px;
-  padding-bottom: 20px;
-  padding-right: 30px;
 
   @media (max-width: 767px) {
     padding-top: 30px;
-    padding-left: 30px;
-    padding-bottom: 20px;
     padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 30px;
   }
 }
 
 .math__list {
   padding: 0;
-  list-style: none;
   margin-bottom: 0;
+  list-style: none;
 }
 
 .math__item {
@@ -84,35 +81,35 @@
   }
 
   &::before {
-    content: '';
+    position: absolute;
+    top: 9px;
+    left: 0;
     width: 11px;
     height: 11px;
     background-color: #e41f25;
-    position: absolute;
-    left: 0;
-    top: 9px;
+    content: '';
   }
 }
 
 .math__note {
   position: relative;
   min-height: 116px;
+  padding-top: 25px;
+  padding-right: 150px;
+  padding-bottom: 25px;
+  padding-left: 150px;
+  margin-bottom: 0;
   background-color: $red;
   color: white;
   font-weight: bold;
   line-height: 1.5;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-right: 150px;
-  padding-left: 150px;
   text-align: center;
-  margin-bottom: 0;
 
   &::before {
-    content: url('/src/img/Business-Cards.png');
     position: absolute;
     bottom: -28px;
     left: -316px;
+    content: url('/src/img/Business-Cards.png');
 
     @media (max-width: 1200px) {
       content: none;
@@ -120,18 +117,18 @@
   }
 
   @media (max-width: 1200px) {
-    padding-left: 100px;
     padding-right: 100px;
+    padding-left: 100px;
   }
 
   @media (max-width: 991px) {
-    padding-left: 30px;
     padding-right: 30px;
+    padding-left: 30px;
   }
 
   @media (max-width: 575px) {
-    font-size: 16px;
-    padding-left: 20px;
     padding-right: 20px;
+    padding-left: 20px;
+    font-size: 16px;
   }
 }

@@ -2,14 +2,14 @@
   position: relative;
   width: 100%;
   max-width: 680px;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 
   &::before {
-    content:url('/src/img/flag.png');
     position: absolute;
-    bottom: -41px;
     right: -573px;
+    bottom: -41px;
+    content: url('/src/img/flag.png');
 
     @media (max-width: 1200px) {
       content: none;
@@ -33,11 +33,11 @@
   &__img-item {
     display: flex;
     width: 98%;
-    flex-shrink: 0;
-    margin: 0% 1%;
     flex-direction: column;
     flex-shrink: 0;
+    flex-shrink: 0;
     justify-content: space-between;
+    margin: 0% 1%;
 
     img {
       max-width: 100%;
@@ -55,10 +55,10 @@
   &__nav-item {
     width: 12px;
     height: 12px;
+    border: 0;
     margin-right: 7px;
     background-color: #c4c4c4;
     border-radius: 50%;
-    border: 0px;
 
     &:last-child {
       margin-right: 0;
@@ -71,20 +71,21 @@
 
   &__btn-prev,
   &__btn-next {
-    top: 50%;
-    transform: translateY(-50%);
     position: absolute;
+    top: 50%;
     width: 42px;
     height: 42px;
-    background-color: transparent;
-    border: 0px;
     padding: 0;
+    border: 0;
+    background-color: transparent;
+    transform: translateY(-50%);
   }
 
   &__btn-prev {
     left: -57px - 42px;
-    @include bg;
     background-image: url('/src/img/left-arrow.png');
+
+    @include bg;
 
     @media (max-width: 991px) {
       left: -36px;
@@ -95,14 +96,15 @@
     }
 
     @media (max-width: 575px) {
-      left: 0px;
+      left: 0;
     }
   }
 
   &__btn-next {
     right: -57px - 42px;
-    @include bg;
     background-image: url('/src/img/right-arrow.png');
+
+    @include bg;
 
     @media (max-width: 991px) {
       right: -36px;
@@ -113,7 +115,7 @@
     }
 
     @media (max-width: 575px) {
-      right: 0px;
+      right: 0;
     }
   }
 }

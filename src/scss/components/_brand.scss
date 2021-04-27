@@ -1,9 +1,9 @@
 .brand {
-  background-color: #f4f4f4;
+  overflow: hidden;
   min-height: 907px;
   padding-top: 60px;
   padding-bottom: 30px;
-  overflow: hidden;
+  background-color: #f4f4f4;
 
   @media (max-width: 575px) {
     min-height: auto;
@@ -12,16 +12,16 @@
 }
 
 .brand__title {
-  font-family: Avanti;
-  font-size: 60px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
   width: 100%;
   max-width: 760px;
   margin-right: auto;
+  margin-bottom: 20px;
   margin-left: auto;
+  font-family: Avanti;
+  font-size: 60px;
+  font-weight: bold;
   line-height: 70px;
+  text-align: center;
 
   span {
     color: $red;
@@ -34,8 +34,8 @@
 }
 
 .brand__text {
-  text-align: center;
   margin-bottom: 40px;
+  text-align: center;
 
   @media (max-width: 575px) {
     font-size: 18px;

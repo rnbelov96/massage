@@ -1,9 +1,10 @@
 .desc {
+  min-height: 900px;
   padding-top: 20px;
   padding-bottom: 33px;
-  min-height: 900px;
-  @include bg;
   background-image: url('/src/img/bgs/desc-bg.jpg');
+
+  @include bg;
 }
 
 .desc__title {
@@ -25,9 +26,9 @@
   }
 
   @media (max-width: 575px) {
-    font-size: 26px;
     margin-top: 20px;
     margin-bottom: 40px;
+    font-size: 26px;
     line-height: 40px;
   }
 }
@@ -48,26 +49,28 @@
 
   &:first-child .desc__item-logo::before {
     position: absolute;
-    left: 59%;
-    transform: translateX(-50%);
     top: -8px;
-    content: '';
+    left: 59%;
     width: 84px;
     height: 87px;
-    @include bg;
     background-image: url('/src/img/icons/desc-icon-1.png');
+    content: '';
+    transform: translateX(-50%);
+
+    @include bg;
   }
 
   &:last-child .desc__item-logo::before {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
     top: 50%;
-    content: '';
+    left: 50%;
     width: 74px;
     height: 74px;
-    @include bg;
     background-image: url('/src/img/icons/desc-icon-2.png');
+    content: '';
+    transform: translateX(-50%) translateY(-50%);
+
+    @include bg;
   }
 }
 
@@ -75,10 +78,10 @@
   position: relative;
   width: 79px;
   height: 79px;
+  flex-shrink: 0;
+  margin-right: 23px;
   background-color: $red;
   border-radius: 50%;
-  margin-right: 23px;
-  flex-shrink: 0;
 }
 
 .desc__item-text {

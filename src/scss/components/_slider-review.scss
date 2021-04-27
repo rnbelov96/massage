@@ -3,10 +3,10 @@
   width: 500px;
 
   &::before {
-    content: url('/src/img/class.png');
     position: absolute;
-    left: -300px;
     bottom: -60px;
+    left: -300px;
+    content: url('/src/img/class.png');
 
     @media (max-width: 991px) {
       content: none;
@@ -22,40 +22,41 @@
   }
 
   &__review-box {
-    padding-top: 61px;
-    padding-left: 89px;
-    padding-right: 90px;
     width: 413px;
     height: 664px;
+    padding-top: 61px;
+    padding-right: 90px;
+    padding-left: 89px;
     margin-right: auto;
     margin-left: auto;
-    @include bg;
     background-image: url('/src/img/iphone.png');
     font-size: 17px;
     line-height: 1.18;
 
+    @include bg;
+
     @media (max-width: 575px) {
-      padding-left: 50px;
-      padding-right: 50px;
       width: 290px;
       height: 591px;
+      padding-right: 50px;
+      padding-left: 50px;
       font-size: 15px;
     }
   }
 
   &__stars-list {
-    margin-bottom: 15px;
     display: block;
+    margin-bottom: 15px;
   }
 
   &__name {
-    font-weight: bold;
     margin-bottom: 0;
+    font-weight: bold;
   }
 
   &__date {
-    color: #706f6f;
     margin-bottom: 20px;
+    color: #706f6f;
   }
 
   &__wrapper {
@@ -75,11 +76,10 @@
   &__img-item {
     display: flex;
     width: 98%;
-    flex-shrink: 0;
-    margin: 0% 1%;
     flex-direction: column;
     flex-shrink: 0;
     justify-content: space-between;
+    margin: 0% 1%;
 
     img {
       max-width: 100%;
@@ -96,10 +96,10 @@
   &__nav-item {
     width: 12px;
     height: 12px;
+    border: 0;
     margin-right: 7px;
     background-color: #c4c4c4;
     border-radius: 50%;
-    border: 0px;
 
     &:last-child {
       margin-right: 0;
@@ -112,18 +112,20 @@
 
   &__btn-prev,
   &__btn-next {
-    top: 40%;
     position: absolute;
+    top: 40%;
     width: 42px;
     height: 42px;
-    background-color: transparent;
-    border: 0px;
     padding: 0;
+    border: 0;
+    background-color: transparent;
   }
 
   &__btn-prev {
-    left: 0px;
+    left: 0;
+
     @include bg;
+
     background-image: url('/src/img/left-arrow.png');
 
     @media (max-width: 1200px) {
@@ -132,8 +134,10 @@
   }
 
   &__btn-next {
-    right: 0px;
+    right: 0;
+
     @include bg;
+
     background-image: url('/src/img/right-arrow.png');
 
     @media (max-width: 1200px) {

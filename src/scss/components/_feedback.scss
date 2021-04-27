@@ -1,9 +1,11 @@
 .feedback {
   min-height: 598px;
-  @include bg;
-  background-image: url('/src/img/bgs/city-bg.png');
   padding-top: 60px;
   padding-bottom: 88px;
+  background-image: url('/src/img/bgs/city-bg.png');
+
+  @include bg;
+
   @media (max-width: 991px) {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -11,12 +13,12 @@
 }
 
 .feedback__title {
+  margin-bottom: 40px;
   font-family: Avanti;
   font-size: 60px;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 40px;
   line-height: 70px;
+  text-align: center;
 
   span {
     color: $red;

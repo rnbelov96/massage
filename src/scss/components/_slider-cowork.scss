@@ -21,11 +21,10 @@
   &__img-item {
     display: flex;
     width: 98%;
-    flex-shrink: 0;
-    margin: 0% 1%;
     flex-direction: column;
     flex-shrink: 0;
     justify-content: space-between;
+    margin: 0% 1%;
 
     img {
       max-width: 100%;
@@ -43,10 +42,10 @@
   &__nav-item {
     width: 12px;
     height: 12px;
+    border: 0;
     margin-right: 7px;
     background-color: #c4c4c4;
     border-radius: 50%;
-    border: 0px;
 
     &:last-child {
       margin-right: 0;
@@ -59,19 +58,21 @@
 
   &__btn-prev,
   &__btn-next {
-    top: 50%;
-    transform: translateY(-50%);
     position: absolute;
+    top: 50%;
     width: 42px;
     height: 42px;
-    background-color: transparent;
-    border: 0px;
     padding: 0;
+    border: 0;
+    background-color: transparent;
+    transform: translateY(-50%);
   }
 
   &__btn-prev {
     left: -28px - 42px;
+
     @include bg;
+
     background-image: url('/src/img/left-arrow.png');
 
     @media (max-width: 1200px) {
@@ -79,13 +80,15 @@
     }
 
     @media (max-width: 575px) {
-      left: 0px;
+      left: 0;
     }
   }
 
   &__btn-next {
     right: -28px - 42px;
+
     @include bg;
+
     background-image: url('/src/img/right-arrow.png');
 
     @media (max-width: 1200px) {
@@ -93,7 +96,7 @@
     }
 
     @media (max-width: 575px) {
-      right: 0px;
+      right: 0;
     }
   }
 }

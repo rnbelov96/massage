@@ -1,7 +1,7 @@
 .money {
+  overflow: hidden;
   min-height: 1100px;
   padding-top: 52px;
-  overflow: hidden;
 
   @media (max-width: 1200px) {
     padding-bottom: 50px;
@@ -13,10 +13,10 @@
 }
 
 .money__title {
+  margin-bottom: 55px;
   font-family: Avanti;
   font-size: 55px;
   font-weight: bold;
-  margin-bottom: 55px;
   text-align: center;
 
   span {
@@ -37,8 +37,8 @@
 }
 
 .money__tablet {
-  margin-bottom: 15px;
   z-index: 1;
+  margin-bottom: 15px;
 
   @media (max-width: 575px) {
     width: 100%;
@@ -48,8 +48,8 @@
 
 .money__content {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
+  justify-content: space-between;
 
   @media (max-width: 1200px) {
     flex-direction: column;
@@ -60,15 +60,16 @@
 .money__stand {
   position: relative;
   width: 744px;
-  padding-left: 105px;
-  padding-right: 105px;
   padding-top: 70px;
+  padding-right: 105px;
+  padding-left: 105px;
 
   &::before {
     position: absolute;
     bottom: -292px;
     left: -648px;
     content: url('/src/img/bed.png');
+
     @media (max-width: 1200px) {
       content: none;
     }
@@ -76,9 +77,9 @@
 
   &::after {
     position: absolute;
-    left: 0;
-    top: -267px;
     z-index: -1;
+    top: -267px;
+    left: 0;
     content: url('/src/img/stand.png');
 
     @media (max-width: 575px) {
@@ -87,21 +88,22 @@
   }
 
   @media (max-width: 575px) {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 30px;
     width: 100%;
-    @include bg;
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
     background-image: url('/src/img/stand-bg.jpg');
+
+    @include bg;
   }
 }
 
 .money__text-wrapper {
   width: 100%;
-  background-color: white;
-  box-shadow: 0 0 27.2px 4.8px rgba(31, 32, 34, 0.07);
   padding: 9px;
   margin-bottom: 52px;
+  background-color: white;
+  box-shadow: 0 0 27.2px 4.8px rgba(31, 32, 34, 0.07);
 
   &:last-child {
     margin-bottom: 34px;
@@ -109,36 +111,35 @@
 }
 
 .money__text-box {
-  border-radius: 4px;
-  box-shadow: 0 0 27.8px 4.2px rgba(31, 32, 34, 0.1);
-  border: solid 1px #bfbfbf;
   padding-top: 15px;
+  padding-right: 35px;
   padding-bottom: 12px;
   padding-left: 35px;
-  padding-right: 35px;
+  border: solid 1px #bfbfbf;
+  border-radius: 4px;
+  box-shadow: 0 0 27.8px 4.2px rgba(31, 32, 34, 0.1);
 
   @media (max-width: 575px) {
-    padding-left: 10px;
     padding-right: 10px;
+    padding-left: 10px;
   }
-  
 }
 
 .money__text-title {
+  margin-bottom: 24px;
+  color: #e41f25;
   font-family: Avanti;
   font-size: 19px;
   font-weight: bold;
   line-height: 1.05;
-  color: #e41f25;
-  margin-bottom: 24px;
   text-align: center;
 }
 
 .money__text {
-  font-size: 18px;
-  text-align: center;
   margin-bottom: 0;
+  font-size: 18px;
   line-height: 24px;
+  text-align: center;
 
   @media (max-width: 575px) {
     br {
@@ -146,4 +147,3 @@
     }
   }
 }
-

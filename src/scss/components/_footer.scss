@@ -1,7 +1,7 @@
 .footer {
-  background-color: #c95155;
   padding-top: 50px;
   padding-bottom: 50px;
+  background-color: #c95155;
   color: white;
 
   @media (max-width: 767px) {
@@ -13,8 +13,8 @@
 .footer__content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   div {
     margin-right: 15px;
@@ -51,16 +51,17 @@
 
 .footer__policy {
   padding: 0;
+  border: 0;
+  margin-bottom: 7px;
   background-color: transparent;
   color: white;
-  border: 0px;
   font-size: 15px;
-  margin-bottom: 7px;
 }
 
 .footer__phone {
-  font-size: 15px;
   color: white;
+  font-size: 15px;
+
   &:hover,
   &:focus,
   &:active {

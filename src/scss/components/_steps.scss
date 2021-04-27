@@ -1,8 +1,8 @@
 .steps {
-  background-color: #f4f4f4;
+  overflow: hidden;
   padding-top: 60px;
   padding-bottom: 40px;
-  overflow: hidden;
+  background-color: #f4f4f4;
 
   @media (max-width: 767px) {
     padding-top: 30px;
@@ -11,11 +11,11 @@
 }
 
 .steps__title {
+  margin-bottom: 45px;
   font-family: Avanti;
   font-size: 60px;
   font-weight: bold;
   line-height: 70px;
-  margin-bottom: 45px;
   text-align: center;
 
   span {
@@ -23,27 +23,25 @@
   }
 
   @media (max-width: 575px) {
+    margin-bottom: 25px;
     font-size: 32px;
     line-height: 46px;
-    margin-bottom: 25px;
   }
 }
 
 .steps__list {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
   padding: 0;
   margin-bottom: 40px;
   list-style: none;
 
-  display: flex;
-  flex-wrap: wrap;
-
   &::before {
     position: absolute;
-
-    content: url('/src/img/steps/candle.png');
-    bottom: -105px;
     right: -320px;
+    bottom: -105px;
+    content: url('/src/img/steps/candle.png');
 
     @media (max-width: 1200px) {
       content: none;
@@ -57,17 +55,17 @@
 }
 
 .steps__item {
-  padding-top: 18px;
-  margin-right: 45px;
-  padding-left: 20px;
-  padding-right: 28px;
-  padding-bottom: 13px;
-  border-radius: 4px;
-  box-shadow: 0 0 6.4px 0.6px rgba(31, 32, 34, 0.08);
-  background-color: white;
   width: 347px;
   min-height: 248px;
+  padding-top: 18px;
+  padding-right: 28px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  margin-right: 45px;
   margin-bottom: 40px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 6.4px 0.6px rgba(31, 32, 34, 0.08);
 
   @media (max-width: 1200px) {
     margin-right: 5px;
@@ -82,64 +80,67 @@
       margin-left: 5px;
     }
   }
+
   &:nth-child(1) {
     background-image: url('/src/img/steps/1.png');
-    background-repeat: no-repeat;
-    background-position: 256px 33px;
-  }
-  &:nth-child(1) {
-    background-image: url('/src/img/steps/1.png');
-    background-repeat: no-repeat;
     background-position: 272px 33px;
+    background-repeat: no-repeat;
   }
+
   &:nth-child(2) {
     background-image: url('/src/img/steps/2.png');
-    background-repeat: no-repeat;
     background-position: 256px 33px;
+    background-repeat: no-repeat;
   }
+
   &:nth-child(3) {
     background-image: url('/src/img/steps/3.png');
-    background-repeat: no-repeat;
     background-position: 256px 33px;
+    background-repeat: no-repeat;
   }
+
   &:nth-child(4) {
     background-image: url('/src/img/steps/4.png');
-    background-repeat: no-repeat;
     background-position: 256px 33px;
+    background-repeat: no-repeat;
   }
+
   &:nth-child(5) {
     background-image: url('/src/img/steps/5.png');
-    background-repeat: no-repeat;
     background-position: 266px 33px;
+    background-repeat: no-repeat;
   }
+
   &:nth-child(6) {
     background-image: url('/src/img/steps/6.png');
-    background-repeat: no-repeat;
     background-position: 272px 33px;
+    background-repeat: no-repeat;
   }
+
   &:nth-child(7) {
     background-image: url('/src/img/steps/7.png');
-    background-repeat: no-repeat;
     background-position: 256px 33px;
+    background-repeat: no-repeat;
   }
+
   &:nth-child(8) {
     background-image: url('/src/img/steps/8.png');
-    background-repeat: no-repeat;
     background-position: 270px 33px;
+    background-repeat: no-repeat;
   }
 }
 
 .steps__item-title {
+  margin-bottom: 30px;
+  color: #e74549;
   font-family: Avanti;
   font-size: 20px;
   font-weight: bold;
-  color: #e74549;
-  margin-bottom: 30px;
   line-height: 1.67;
 }
 
 .steps__text {
+  margin-bottom: 0;
   font-size: 18px;
   line-height: 1.67;
-  margin-bottom: 0;
 }
