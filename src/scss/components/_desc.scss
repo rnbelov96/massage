@@ -5,6 +5,10 @@
   background-image: url('/src/img/bgs/desc-bg.jpg');
 
   @include bg;
+
+  @media (max-width: 700px) {
+    background-position: 0 center;
+  }
 }
 
 .desc__title {
