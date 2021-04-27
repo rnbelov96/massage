@@ -24,10 +24,24 @@
   &:hover,
   &:focus {
     color: white;
+
+    @media (max-width: 575px) {
+      color: transparent;
+    }
   }
 
   @media (max-width: 840px) {
     font-size: 13px;
+  }
+
+  @media (max-width: 575px) {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    color: transparent;
+    border-radius: 50%;
+    background-image: url('/src/img/icons/phone.png');
+    @include bg;
   }
 }
 

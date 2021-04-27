@@ -68,10 +68,24 @@
   &:hover,
   &:focus {
     color: white;
+
+    @media (max-width: 575px) {
+      color: transparent;
+    }
   }
 
   @media (max-width: 767px) {
     font-size: 18px;
+  }
+
+  @media (max-width: 575px) {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    color: transparent;
+    border-radius: 50%;
+    background-image: url('/src/img/icons/phone.png');
+    @include bg;
   }
 }
 
