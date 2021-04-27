@@ -52,7 +52,7 @@ policyBtnElList.forEach(el => {
   });
 });
 
-const youtubeAdvBtnCallEl = document.querySelector('.js-youtube') as HTMLButtonElement;
-youtubeAdvBtnCallEl.addEventListener('click', () => {
+const youtubeAdvBtnCallEl = document.querySelector('.js-youtube');
+youtubeAdvBtnCallEl?.addEventListener('click', () => {
   openModal(youtubeAdvModalEl as HTMLDivElement);
 });

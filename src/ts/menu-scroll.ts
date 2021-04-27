@@ -20,9 +20,13 @@ window.addEventListener('scroll', () => {
   navEl.style.display = 'none';
 });
 
-const topHeaderHamEl = document.querySelector('.js-ham-top') as HTMLButtonElement;
+const topHeaderHamEl = document.querySelector(
+  '.js-ham-top',
+) as HTMLButtonElement;
 const topMenuEl = document.querySelector('.js-menu-top');
-const anchorHamEl = document.querySelector('.js-ham-anchor') as HTMLButtonElement;
+const anchorHamEl = document.querySelector(
+  '.js-ham-anchor',
+) as HTMLButtonElement;
 const anchorDropMenuEl = document.querySelector('.js-menu-anchor-drop');
 const anchorMenuEl = document.querySelector('.js-menu-anchor');
 const menuList = [topMenuEl, anchorDropMenuEl, anchorMenuEl];
@@ -91,7 +95,7 @@ const scrollToElement = (elemToScroll: HTMLDivElement) => {
       return;
     }
     if (elementCoords > offset - 20 && elementCoords < offset) {
-      window.scrollTo(0, window.pageYOffset + offset - elementCoords);
+      window.scrollTo(0, window.pageYOffset - (offset - elementCoords));
       clearInterval(interval);
       menuList.forEach(menu => {
         menu?.addEventListener('click', menuClickHandler);
